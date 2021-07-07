@@ -1,0 +1,20 @@
+{
+    "name": "esbootcamp/blog",
+    "autoload": {
+
+        "psr-4": {
+                "App\\":"app/",
+                "":"src/"
+        },
+        "files": ["routes/routes.php"]
+    },
+    "authors": [
+        {
+            "name": "esbootcampGroup4",
+            "email": "esbootcampGroup4@esbootcampGroup4.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "3.0"
+    }
+}
