@@ -27,7 +27,7 @@ Route::get('/dashboard/articles/update/{id}','ArticleController@update');
 
 
 //Categories
-Route::get('/dashboard/categories','CategoryController@index');
+Route::get('/dashboard/categories','App\controllers\CategoryController@index');
 Route::get('/dashboard/categories/create','ArticleController@create');
 
 

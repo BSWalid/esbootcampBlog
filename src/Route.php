@@ -37,6 +37,8 @@ class Route {
            if($route->match(trim($_GET['url']),'/')){
                
                $route->execute();
+               die();
+               
                
 
            }

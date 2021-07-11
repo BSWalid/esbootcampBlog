@@ -6,7 +6,7 @@
                 "App\\":"app/",
                 "":"src/"
         },
-        "files": ["routes/routes.php"]
+        "files": ["routes/routes.php","databases/Database.php"]
     },
     "authors": [
         {
@@ -15,6 +15,8 @@
         }
     ],
     "require": {
-        "twig/twig": "3.0"
+        "twig/twig": "3.0",
+        "illuminate/database": "^8.49",
+        "illuminate/events": "^8.49"
     }
 }
