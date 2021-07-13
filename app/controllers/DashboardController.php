@@ -8,7 +8,7 @@ class DashboardController extends Controller{
 
 
         public function index(){
-                return $this->view('index.twig',['name'=>'walid']);
+                return $this->view('dashboard.twig');
             
         }
 

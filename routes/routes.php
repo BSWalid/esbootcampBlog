@@ -2,7 +2,7 @@
 
 
 Route::get('/home',"App\controllers\HomeController@index");
-Route::get('/dashboard','DashbaordController@index');
+Route::get('/dashboard','App\controllers\DashboardController@index');
 
 
 Route::get('/home/category/{name}','DashboardController@showFullCategory');

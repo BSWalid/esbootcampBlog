@@ -9,9 +9,9 @@ class Controller
 
         $loader = new FilesystemLoader('../views');
         $twig = new Environment($loader, [
-            'cache' => 'false',
+          
         ]);
-        
+    
         echo $twig->render($path,$data);
 
        

@@ -15,12 +15,12 @@ class HomeController extends Controller{
 
 
         
-        public function show(){
+        public function categoryFullPage($id){
 
-            echo "from controller show method";
+            
         }
 
-        public function showwithID($id){
+        public function singleArticleShow($id){
 
             echo"this is a parameter sent from routing  ".$id;
         }
