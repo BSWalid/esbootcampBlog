@@ -6,19 +6,19 @@ use Controller;
 
 
 
-class ArticleController extends Controller 
+class BlogController extends Controller 
 {
 
     public function index(){
 
-             return $this->view('articles/index.twig');
+             return $this->view('blog/index.twig');
       
           
       }
 
       public function create()
       {
-              return $this->view('articles/create.twig');
+              return $this->view('blog/create.twig');
 
       }
       public function store()

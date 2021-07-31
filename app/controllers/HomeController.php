@@ -8,8 +8,7 @@ class HomeController extends Controller{
 
 
         public function index(){
-                return $this->view('home.twig',[
-                                                 'article'=>"article of fattah"]);
+                return $this->view('home.twig',);
             
         }
 

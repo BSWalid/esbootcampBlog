@@ -6,14 +6,14 @@ class HttpRequest{
     public function all()
     {   
         
-        return $_GET;
+        return $_POST;
     
     }
 
 
     public function name(string $field)
     {
-        return $_GET[$field];
+        return $_POST[$field];
     }
 
 

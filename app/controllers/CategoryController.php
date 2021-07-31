@@ -10,16 +10,15 @@ class CategoryController extends Controller{
 
 
         public function index(){
-          $categories = Category::all();
-          echo "<pre>.$categories</pre> ";
-                return $this->view('categories/index.twig',compact('categories'));
+          
+                return $this->view('categories/index.twig');
             
         }
 
         public function create()
         {
         
-                return $this->view('createArticle.twig');   
+                return $this->view('categories/create.twig');
 
         }
         public function store()

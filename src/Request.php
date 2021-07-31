@@ -31,21 +31,26 @@ class Request {
     }
 
     public function match($url){
-       
+        
         $path = preg_replace('#({[\w]+})#','([^/])',$this->path);
         
+        
         $pathToMatch = "#^$path$#";
+      
+        
 
         
 
         if(preg_match($pathToMatch,$url,$results)){
             
             array_shift($results);
+            
             $this->params = $results;
             
 
             return true;
         }else{
+            
             return false;
         }
         
@@ -64,6 +69,8 @@ class Request {
         $method = $action[1];
 
         if($_SERVER['REQUEST_METHOD']==='GET'){
+            
+            
             
             return isset($this->params) ? $controller->$method(implode($this->params)) : $controller->$method();
         }else
