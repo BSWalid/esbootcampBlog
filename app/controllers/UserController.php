@@ -47,15 +47,13 @@ class UserController extends Controller
       }
       public function edit($id)
       {         
-                
-                die($id);
-            $user = User::where('user_id',$id)->first();
-            
-                
+               
+            $user = User::where('user_id',$id)->first();     
             return $this->view('users/update.twig',['user'=>$user]);
+
       }
 
-      public function update()
+      public function update(HttpRequest $httpRequest )
       {
              //update record in database 
       }

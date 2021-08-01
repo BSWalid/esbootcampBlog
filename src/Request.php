@@ -31,25 +31,27 @@ class Request {
     }
 
     public function match($url){
-        
-        $path = preg_replace('#({[\w]+})#','([^/])',$this->path);
+       
+        $path = preg_replace('#({[\w]+})#','([^/]+)',$this->path);
+   
         
         
         $pathToMatch = "#^$path$#";
-      
+     
+       
         
-
-        
-
+    
         if(preg_match($pathToMatch,$url,$results)){
             
             array_shift($results);
-            
             $this->params = $results;
             
-
+            var_dump($results);
+            
+            
             return true;
         }else{
+       
             
             return false;
         }
