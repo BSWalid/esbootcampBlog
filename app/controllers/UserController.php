@@ -7,6 +7,7 @@ use App\Models\User;
 use App\https\HttpRequest;
 
 
+
 class UserController extends Controller 
 {
 
@@ -49,7 +50,8 @@ class UserController extends Controller
       public function edit($id)
       {         
                
-            $user = User::where('user_id',$id)->first();     
+            $user = User::where('user_id',$id)->first();
+                 
             return $this->view('users/update.twig',['user'=>$user]);
 
       }

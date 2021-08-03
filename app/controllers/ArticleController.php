@@ -7,10 +7,9 @@ namespace App\Controllers;
 use App\https\HttpRequest;
 use App\Models\User;
 use App\Models\Article;
-
+use App\Models\Category;
 use Controller;
-
-
+use Illuminate\Database\Capsule\Manager as DB;
 
 class ArticleController extends Controller 
 {
@@ -26,7 +25,9 @@ class ArticleController extends Controller
       public function create()
       {
               //returns create view
-      return $this->view('articles/create.twig');
+
+              $categories = Category::all();
+      return $this->view('articles/create.twig',compact('categories'));
 
 
       }
@@ -35,12 +36,24 @@ class ArticleController extends Controller
 
               $fields = $httpRequest->all(); 
               //this will be replace by the logged User
-              $fields['user_id']= 20;
+            
               
               //ramsey/uuid package
-              Article::create($fields);
-              
+               $article=Article::create([
+                "title"=>$fields['title'],
+                "sub_title"=>$fields['sub_title'],
+                "body"=>$fields['body'],
+                "user_id"=>20
 
+              ]);
+
+        
+        
+           
+              DB::table('category_articles')->insert([
+                'article_id' => $article->id,
+                'category_id' => $httpRequest->name('category_id'),
+              ]);
 
               header("Location:/EsBootCamp-Blog/dashboard/articles");
         
@@ -50,6 +63,9 @@ class ArticleController extends Controller
       public function delete($id)
       {
         $article = Article::where('article_id',$id);
+        $article_from_category = DB::table('category_articles')->where('article_id',$id);
+        
+        $article_from_category->delete();
         $article->delete();
         
         header("Location:/EsBootCamp-Blog/dashboard/articles");
