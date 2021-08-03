@@ -1,12 +1,64 @@
-{% extends "dashboard.twig" %}
-
-{% block css %}
+{% extends "dashboard.twig" %} {% block css %}
 {{ parent() }}
-<link rel="stylesheet" href="../public/assets/css/style.css">
+<link rel="stylesheet" href="../public/assets/css/style.css" />
+
+{% endblock %}
+ {% block content %}
+{{ parent() }}
+
+
+<div class="col-lg-8 col-md-10 ml-auto mr-auto">
+            
+
+                <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Name</th>
+                            <th>Category description</th>
+                            <th>created_at</th>
+                            
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         {% for category in categories %}
+
+                         <tr>
+                            <td class="text-center">{{category.user_id}}</td>
+                            <td>{{category.name}}</td>
+                            <td>{{ category.category_description }}</td>
+                            <td class="text-right">{{category.created_at }}</td>
+                            <td class="td-actions text-right">
+                            
+                                
+                                <a href="/EsBootCamp-Blog/dashboard/categories/edit/{{category.category_id}}"><button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="material-icons">edit</i>
+                                </button></a>
+                                <a href="/EsBootCamp-Blog/dashboard/categories/delete/{{category.category_id}}"><button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="material-icons">Delete</i>
+                                </button></a>
+                            </td>
+                        </tr>
+                              
+                         {% endfor %}
+                        
+                    
+                    </tbody>
+                </table>
+                </div>
+    
+    
+            </div>
+
+
+
 
 {% endblock %}
 
-{% block content %}
-    {{ parent() }}
-    <h1> Create</h1>
+
+ {% block script %}
+{{ parent() }}
+
 {% endblock %}

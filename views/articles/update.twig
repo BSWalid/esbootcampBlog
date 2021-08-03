@@ -1,12 +1,78 @@
-{% extends "dashboard.twig" %}
-
-{% block css %}
+{% extends "dashboard.twig" %} {% block css %}
 {{ parent() }}
-<link rel="stylesheet" href="../public/assets/css/style.css">
+<link rel="stylesheet" href="/EsBootCamp-Blog/public/assets/css/style.css" />
 
-{% endblock %}
+{% endblock %} {% block content %}
 
-{% block content %}
-    {{ parent() }}
-    <h1> Create</h1>
+<h1>Update Article</h1>
+<form method="POST" action="/EsBootCamp-Blog/dashboard/articles/update">
+  <div class="form-group row">
+    <label for="username" class="col-2 col-form-label">Title</label>
+    <div class="col-10">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+        <input
+          id="title"
+          name="title"
+          placeholder="Please enter the Article Title"
+          type="text"
+          required="required"
+          class="form-control"
+          value="{{article.title}}"
+        />
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <i class="fa"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-2 col-form-label">Sub Title</label>
+    <div class="col-10">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+        <input
+          id="sub_title"
+          name="sub_title"
+          placeholder="Please Enter Sub Title"
+          type="text"
+          required="required"
+          class="form-control"
+          value="{{article.sub_title}}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="body" class="col-2 col-form-label">Article Body</label>
+    <div class="col-8">
+      <textarea
+        id="body"
+        name="body"
+        cols="40"
+        rows="6"
+        class="form-control"
+      >{{article.body}}</textarea>
+    </div>
+  </div>
+
+  <input type="hidden" name="article_id" value="{{article.article_id}}"></input>
+  
+  <div class="form-group row">
+    <div class="offset-2 col-10">
+      <button type="submit" class="btn btn-primary">Update Article</button>
+    </div>
+  </div>
+</form>
 {% endblock %}

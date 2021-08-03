@@ -1,12 +1,65 @@
-{% extends "dashboard.twig" %}
-
-{% block css %}
+{% extends "dashboard.twig" %} {% block css %}
 {{ parent() }}
-<link rel="stylesheet" href="../public/assets/css/style.css">
+<link rel="stylesheet" href="../public/assets/css/style.css" />
+
+{% endblock %}
+ {% block content %}
+{{ parent() }}
+
+
+<div class="col-lg-8 col-md-10 ml-auto mr-auto">
+            <h4><small>Simple With Actions</small></h4>
+
+                <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">article id</th>
+                            <th>article Title</th>
+                            <th>article subtitle</th>
+                            <th>Created by</th>
+                            <th class="text-right">created at</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         {% for article in articles %}
+
+                         <tr>
+                            <td class="text-center">{{article.article_id}}</td>
+                            <td>{{article.title}}</td>
+                            <td>{{article.sub_title}}</td>
+                            <td>{{article.user_id}}</td>
+                            <td class="text-right">{{article.created_at}}</td>
+                            <td class="td-actions text-right">
+                            
+                               
+                                <a href="/EsBootCamp-Blog/dashboard/articles/edit/{{article.article_id}}"><button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="material-icons">edit</i>
+                                </button></a>
+                                <a href="/EsBootCamp-Blog/dashboard/articles/delete/{{article.article_id}}"><button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="material-icons">Delete</i>
+                                </button></a>
+                            </td>
+                        </tr>
+                              
+                         {% endfor %}
+                        
+                    
+                    </tbody>
+                </table>
+                </div>
+    
+    
+            </div>
+
+
+
 
 {% endblock %}
 
-{% block content %}
-    {{ parent() }}
-    <h1> create</h1>
+
+ {% block script %}
+{{ parent() }}
+
 {% endblock %}

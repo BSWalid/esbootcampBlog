@@ -1,13 +1,11 @@
 <?php
 
 
-
 namespace App\Controllers;
 use Controller;
 use App\Models\User;
 use App\https\HttpRequest;
-use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Redirect;
+
 
 class UserController extends Controller 
 {
@@ -41,9 +39,12 @@ class UserController extends Controller
 
       }
 
-      public function delete()
+      public function delete($id)
       {
-              //delete record from database
+        $user = User::where('user_id',$id);
+        $user->delete();
+        
+        header("Location:/EsBootCamp-Blog/dashboard/users");
       }
       public function edit($id)
       {         
@@ -53,9 +54,18 @@ class UserController extends Controller
 
       }
 
-      public function update(HttpRequest $httpRequest )
+      public function update(HttpRequest $httpRequest)
       {
-             //update record in database 
+        $fields = $httpRequest->all();
+        
+        
+        $user=  User::where('user_id',$httpRequest->name('user_id'))->update($fields);
+        
+        // echo '<pre>' . var_export($user, true) . '</pre>';
+        // die();
+        
+        
+        header("Location:/EsBootCamp-Blog/dashboard/users");
       }
 
 

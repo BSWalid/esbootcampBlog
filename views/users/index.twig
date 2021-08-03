@@ -26,7 +26,7 @@
                          {% for user in users %}
 
                          <tr>
-                            <td class="text-center">1</td>
+                            <td class="text-center">{{user.user_id}}</td>
                             <td>{{user.username}}</td>
                             <td>{{user.name}}</td>
                             <td>{{user.email}}</td>
@@ -39,7 +39,7 @@
                                 <a href="/EsBootCamp-Blog/dashboard/users/edit/{{user.user_id}}"><button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
                                     <i class="material-icons">edit</i>
                                 </button></a>
-                                <a href=""><button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                <a href="/EsBootCamp-Blog/dashboard/users/delete/{{user.user_id}}"><button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
                                     <i class="material-icons">Delete</i>
                                 </button></a>
                             </td>

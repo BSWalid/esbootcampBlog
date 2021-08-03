@@ -2,9 +2,9 @@
 
 namespace App\Models;
 use Model;
-class User extends Model{
+class Article extends Model{
 
-
+    protected $guarded =[];
 
 
 }
