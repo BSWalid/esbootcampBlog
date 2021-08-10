@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Controller;
 use App\Models\Category;
 use App\https\HttpRequest;
+use Illuminate\Database\Capsule\Manager as DB;
 
 
 class CategoryController extends Controller 
@@ -43,6 +44,9 @@ class CategoryController extends Controller
       public function delete($id)
       {
         $category = Category::where('category_id',$id);
+        $category_from_joint = DB::table('category_articles')->where('category_id',$id);
+        
+        $category_from_joint->delete();
         $category->delete();
         
         header("Location:/EsBootCamp-Blog/dashboard/categories");

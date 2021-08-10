@@ -7,4 +7,6 @@ class Article extends Model{
     protected $guarded =[];
 
 
+    
+
 }
