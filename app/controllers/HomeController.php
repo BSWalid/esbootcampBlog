@@ -62,6 +62,16 @@ class HomeController extends Controller{
         
         public function categoryFullPage($id){
 
+                $categories = Category::all();
+                $category = Category::where('category_id',$id)->first();
+               
+                $articles = Article::whereIN('article_id',DB::table('article_category')->where('category_id',$id)->pluck('article_id')->toArray())->get();
+
+              
+
+
+                return $this->view('singleCategoryPage/index.twig',compact('categories','category','articles'));
+
             
         }
 

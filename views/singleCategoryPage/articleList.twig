@@ -1,15 +1,4 @@
-<div class="container mt-100 mt-60">
-    <div class="row">
-        <div class="col-12 text-center">
-            <div class="section-title mb-4 pb-2">
-                <h4 class="title mb-4">Latest {{category.category}} Articles</h4>
-                <p class="text-muted para-desc mx-auto mb-0">Some Description</p>
-            </div>
-        </div><!--end col-->
-    </div><!--end row-->
-
-    <div class="row">
-         {% for article in category.articles %}
+{% for article in articles %}
 
         <div class="col-lg-4 col-md-6 mt-4 pt-2">
             <div class="blog-post rounded border">
@@ -37,14 +26,3 @@
         </div>
 
       {% endfor %}
-
-       <!--end col-->
-        
-  <div class="ml-auto p-2"><a href="/EsBootCamp-Blog/home/category/{{category.category_id}}" type="button" class="mt-2 btn btn-primary"><span class="text-white">See all</span></a></div>
-     
- 
-</div>
-        
-
-    </div> <!--end row-->
-</div>

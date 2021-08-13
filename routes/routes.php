@@ -3,12 +3,12 @@
 
 Route::get('/home',"App\controllers\HomeController@index");
 Route::get('/home/article/{id}','App\controllers\HomeController@singleArticleShow');
+Route::get('/home/category/{id}','App\controllers\HomeController@categoryFullPage');
+
 
 Route::get('/dashboard','App\controllers\DashboardController@index');
 
 
-Route::get('/home/category/{name}','DashboardController@showFullCategory');
-Route::get('/home/category/{id}','DashboardController@showOnePost');
 
 
 
