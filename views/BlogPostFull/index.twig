@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="/EsBootCamp-Blog/public/assets/css/homestyles.css" />
+
+    <!-- Scrollbar Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+    />
+    {% block css %} 
+    {% endblock css %}
+    <!-- Font Awesome JS -->
+
+
+    <title>Blog Home</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Featured Post  -->
+
+      {{ include("HomePage/navbar.twig") }}
+
+
+
+            <!-- Full Page Image Header with Vertically Centered Content -->
+            <header class="masthead">
+              <div class="container mt-3 ">
+                <div class="row align-items-center">
+                  <div class="col-12 text-center">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%221151%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201151%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17b3b53eba5%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A58pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17b3b53eba5%22%3E%3Crect%20width%3D%221151%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22408.5078125%22%20y%3D%22150.8%22%3E1151x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" class="img-fluid" alt="Responsive image">
+
+                  
+                  </div>
+                </div>
+              </div>
+            </header>
+
+        <!-- Page Content -->
+            <section class="py-5">
+              <div class="container">
+                <h2 class="fw-light">{{article.title}}</h2>
+                <p>{% autoescape %}
+                 {{article.body|raw }} {# var won't be escaped #}
+                {% endautoescape %}</p>
+              </div>
+        </section>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./public/assets/js/scripts.css"></script>
+    <script src="/EsBootCamp-Blog/public/assets/ckeditor/ckeditor.js"></script>
+
+
+    {% block script %} {% endblock script %}
+
+
+  
+ </script>
+</body>
+
+</html>

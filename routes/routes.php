@@ -2,6 +2,8 @@
 
 
 Route::get('/home',"App\controllers\HomeController@index");
+Route::get('/home/article/{id}','App\controllers\HomeController@singleArticleShow');
+
 Route::get('/dashboard','App\controllers\DashboardController@index');
 
 

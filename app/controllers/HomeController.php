@@ -66,7 +66,10 @@ class HomeController extends Controller{
         }
 
         public function singleArticleShow($id){
+               $article = Article::where('article_id',$id)->first();
+                
+           
 
-            echo"this is a parameter sent from routing  ".$id;
+            return $this->view('BlogPostFull/index.twig',compact('article'));
         }
 }

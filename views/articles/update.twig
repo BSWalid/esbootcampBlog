@@ -57,13 +57,15 @@
   <div class="form-group row">
     <label for="body" class="col-2 col-form-label">Article Body</label>
     <div class="col-8">
-      <textarea
-        id="body"
+
+    <textarea
         name="body"
-        cols="40"
-        rows="6"
+        cols="100"
+        rows="30"
         class="form-control"
+        id="ckeditorbody"
       >{{article.body}}</textarea>
+      
     </div>
   </div>
 
@@ -76,3 +78,12 @@
   </div>
 </form>
 {% endblock %}
+
+{% block script %}
+<script src="/EsBootCamp-Blog/public/assets/ckeditor/ckeditor.js"></script>
+  <script>
+    CKEDITOR.replace('ckeditorbody', {
+      uiColor: '#7386D5'
+    });
+  </script>
+{% endblock  %}

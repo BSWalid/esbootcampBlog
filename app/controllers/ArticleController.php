@@ -50,7 +50,7 @@ class ArticleController extends Controller
         
         
            
-              DB::table('category_articles')->insert([
+              DB::table('article_category')->insert([
                 'article_id' => $article->id,
                 'category_id' => $httpRequest->name('category_id'),
               ]);
@@ -63,7 +63,7 @@ class ArticleController extends Controller
       public function delete($id)
       {
         $article = Article::where('article_id',$id);
-        $article_from_category = DB::table('category_articles')->where('article_id',$id);
+        $article_from_category = DB::table('article_category')->where('article_id',$id);
         
         $article_from_category->delete();
         $article->delete();

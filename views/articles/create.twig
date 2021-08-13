@@ -2,7 +2,10 @@
 {{ parent() }}
 <link rel="stylesheet" href="/EsBootCamp-Blog/public/assets/css/style.css" />
 
-{% endblock %} {% block content %}
+{% endblock %} 
+
+
+{% block content %}
 
 <h1>Create a New Article</h1>
 <form method="POST" action="/EsBootCamp-Blog/dashboard/articles/store">
@@ -66,13 +69,13 @@
 
   <div class="form-group row">
     <label for="body" class="col-2 col-form-label">Article Body</label>
-    <div class="col-8">
+    <div class="col-10">
       <textarea
-        id="body"
         name="body"
-        cols="40"
-        rows="6"
+        cols="100"
+        rows="30"
         class="form-control"
+        id="ckeditorbody"
       ></textarea>
     </div>
   </div>
@@ -84,3 +87,12 @@
   </div>
 </form>
 {% endblock %}
+
+{% block script %}
+<script src="/EsBootCamp-Blog/public/assets/ckeditor/ckeditor.js"></script>
+  <script>
+    CKEDITOR.replace('ckeditorbody', {
+      uiColor: '#7386D5'
+    });
+  </script>
+{% endblock  %}
