@@ -29,6 +29,8 @@ class UserController extends Controller
       {       
 
               $fields = $httpRequest->all(); 
+              $fields['password'] = password_hash($fields['password'],PASSWORD_BCRYPT);
+              
               
               //ramsey/uuid package
               User::create($fields);

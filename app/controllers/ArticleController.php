@@ -43,7 +43,7 @@ class ArticleController extends Controller
                 "title"=>$fields['title'],
                 "sub_title"=>$fields['sub_title'],
                 "body"=>$fields['body'],
-                "user_id"=>20
+                "user_id"=>$_SESSION['auth']
 
               ]);
 

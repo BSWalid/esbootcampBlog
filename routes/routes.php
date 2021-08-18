@@ -8,6 +8,10 @@ Route::get('/home/category/{id}','App\controllers\HomeController@categoryFullPag
 
 Route::get('/dashboard','App\controllers\DashboardController@index');
 
+Route::get('/login','App\controllers\LoginController@index');
+Route::post('/login','App\controllers\LoginController@login');
+
+
 
 
 
